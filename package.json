@@ -4,9 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+  "test": "playwright test",
+  "test:ui": "playwright test --ui",
+  "test:headed": "playwright test --headed",
+  "test:debug": "playwright test --debug",
+  "test:chromium": "playwright test --project=chromium",
+  "test:smoke": "playwright test tests/smoke",
+  "test:navigation": "playwright test tests/navigation",
+  "test:api": "playwright test --project=api",
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix",
+  "typecheck": "tsc --noEmit",
+  "report": "playwright show-report",
+  "ci": "npm run lint && npm run typecheck && npm test"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +33,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "prettier": "^3.9.6",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.66.0"
   },
   "dependencies": {
